@@ -12,6 +12,11 @@ jobs:
       - name: Checkout branch
         uses: actions/checkout@v5
 
+      - name: Terraform module
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: latest  
+
       - name: Configure AWS CLI 
         uses: aws-actions/configure-aws-credentials@v5.0.0
         with:
@@ -30,5 +35,4 @@ jobs:
 
       - name: Terraform apply to deploy Infrastructure
         run: terraform apply --auto-approve
-       
-          
+
