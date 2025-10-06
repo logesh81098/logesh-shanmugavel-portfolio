@@ -36,3 +36,13 @@ jobs:
       - name: Terraform apply to deploy Infrastructure
         run: terraform apply --auto-approve
 
+      - name: Deploying Portfolio in Netlify
+        uses: South-Paw/action-netlify-cli@v2
+        id: netlify
+        with:
+          args: 'deploy --dir "./module/s3" --message "Production deploy [${{ github.sha }}]" --prod'
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+
+   
