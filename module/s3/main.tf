@@ -30,3 +30,15 @@ resource "aws_s3_object" "upload-image" {
   source = "module/s3/Logesh.jpeg"
   key = "Logesh.jpeg"
 }
+
+
+#Updating S3 bucket permission from Private facing to Public facing 
+
+resource "aws_s3_bucket_public_access_block" "private-to-public" {
+  bucket = aws_s3_bucket.logesh-portfolio.id
+  block_public_acls = false
+  block_public_policy = false 
+  ignore_public_acls = false
+  restrict_public_buckets = false
+}
+
