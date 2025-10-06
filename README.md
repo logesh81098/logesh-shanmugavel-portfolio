@@ -49,8 +49,11 @@ Portfolio static site code (HTML/CSS/JS)
 **📦 Setup Instructions**
 
 Clone the repository
+
 git clone https://github.com/logesh81098/logesh-shanmugavel-portfolio.git
+
 cd logesh-shanmugavel-portfolio
+
 Configure AWS credentials (via GitHub Secrets or CLI).
 
 Initialize Terraform
@@ -61,12 +64,16 @@ Run plan & apply
 terraform plan
 terraform apply
 
+**🔄 CI/CD Pipeline**
+
+
+Pull Request (PR) → Runs terraform fmt, validate, plan
+Main Branch Merge → Runs terraform apply to update AWS infra
+Auto Deployment → New portfolio 
+
 Thank you so much for reading..😅
 
 Happy learning !!!!!!!
 
 
-🔄 CI/CD Pipeline
-Pull Request (PR) → Runs terraform fmt, validate, plan
-Main Branch Merge → Runs terraform apply to update AWS infra
-Auto Deployment → New portfolio 
+
