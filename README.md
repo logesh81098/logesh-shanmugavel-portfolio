@@ -6,6 +6,9 @@ The pipeline provisions cloud infrastructure, hosts the portfolio on S3 (static 
 
 **🏗️ Architecture:**
 
+<img width="703" height="295" alt="image" src="https://github.com/user-attachments/assets/72e65277-5338-4aed-ac33-9c694ea0433e" />
+
+
 Frontend: Static portfolio website (HTML/CSS/JS).
 AWS S3: Stores static website files.
 Netlify: Provides global CDN distribution for low latency.
@@ -17,13 +20,6 @@ Developer → GitHub Repo → GitHub Actions → Terraform → AWS S3
                                            Netlify (for hosting + domain)
 
 
-**⚙️ Features**
-
-✅ Automated Infrastructure provisioning with Terraform ✅ Secure storage using S3 Bucket (static hosting) ✅ CI/CD pipeline using GitHub Actions:
-
-terraform plan runs on PR
-terraform apply runs on merge ✅ Modular Terraform structure for scalability
-
 
 **🚀 Deployment Workflow**
 
@@ -31,10 +27,10 @@ Developer commits changes → Push to GitHub
 
 GitHub Actions Workflow runs
 
-terraform fmt + terraform validate
-terraform plan on PR (review changes)
-terraform apply on merge to main
-AWS Infrastructure Updated
+terraform validate
+terraform plan 
+terraform apply 
+
 
 Portfolio automatically deployed & served globally 🌍
 
@@ -46,30 +42,25 @@ GitHub repository with Actions enabled
 Portfolio static site code (HTML/CSS/JS)
 
 
-**📦 Setup Instructions**
+**✈️ Now we are ready to deploy our application on cloud ⛅**
 
-Clone the repository
+Clone this repository to your local machine using
 
-git clone https://github.com/logesh81098/logesh-shanmugavel-portfolio.git
+      gitclone https://github.com/logesh81098/logesh-shanmugavel-portfolio.git
 
-cd logesh-shanmugavel-portfolio
+Execute Terraform plan to check about infrastructure
 
-Configure AWS credentials (via GitHub Secrets or CLI).
+            terraform plan
 
-Initialize Terraform
+Execute Terraform apply to build this infrasturcute
 
-terraform init
-Run plan & apply
+            terraform apply
 
-terraform plan
-terraform apply
+✨Finally,type yes for prompt
 
-**🔄 CI/CD Pipeline**
+<img width="1918" height="862" alt="image" src="https://github.com/user-attachments/assets/48d96ef8-bc15-4d16-ad7f-53fc48cbf95e" />
 
-
-Pull Request (PR) → Runs terraform fmt, validate, plan
-Main Branch Merge → Runs terraform apply to update AWS infra
-Auto Deployment → New portfolio 
+Portfolio Link: https://logesh-shanmugavel-portfolio.netlify.app/
 
 Thank you so much for reading..😅
 
