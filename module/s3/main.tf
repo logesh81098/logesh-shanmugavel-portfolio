@@ -21,8 +21,8 @@ resource "aws_s3_object" "upload-index-file" {
 
 resource "aws_s3_object" "upload-resume" {
   bucket = aws_s3_bucket.logesh-portfolio.id
-  source = "module/s3/Logesh Updated Resume.pdf"
-  key = "Logesh Updated Resume.pdf"
+  source = "module/s3/Logesh Resume.pdf"
+  key = "Logesh Resume.pdf"
 }
 
 resource "aws_s3_object" "upload-image" {
@@ -62,4 +62,14 @@ resource "aws_s3_bucket_policy" "bucket-policy" {
     ]
 }  
 EOF
+}
+
+
+#Enable static S3 bucket 
+
+resource "aws_s3_bucket_website_configuration" "static-s3-bucket" {
+  bucket = aws_s3_bucket.logesh-portfolio.id
+  index_document {
+    suffix = "index.html"
+  }
 }
